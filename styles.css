@@ -103,6 +103,10 @@ a {
   align-items: end;
 }
 
+.book-hero {
+  align-items: center;
+}
+
 .eyebrow {
   margin: 0 0 12px;
   color: var(--accent);
@@ -283,6 +287,49 @@ h1 {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
+}
+
+.book-outline {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.book-chapter {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  padding: 20px;
+}
+
+.book-chapter h3 {
+  margin: 8px 0 12px;
+  font-size: 21px;
+}
+
+.book-chapter ol {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.book-chapter li {
+  margin: 6px 0;
+}
+
+.book-chapter p {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.book-part {
+  display: inline-flex;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  padding: 3px 9px;
+  font-size: 12px;
+  font-weight: 800;
 }
 
 .chapter-link {
@@ -500,7 +547,8 @@ th {
 
   .grid.three,
   .grid.two,
-  .toc-list {
+  .toc-list,
+  .book-outline {
     grid-template-columns: 1fr;
   }
 
