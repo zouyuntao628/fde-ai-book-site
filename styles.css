@@ -130,6 +130,13 @@ h1 {
   font-size: 20px;
 }
 
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
 .hero-panel {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -172,6 +179,49 @@ h1 {
 .stat span {
   color: var(--muted);
   font-size: 13px;
+}
+
+.status-band {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: 24px;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 12px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.status-band h2 {
+  margin: 0 0 8px;
+}
+
+.status-band p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.status-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.status-metrics span {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  padding: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.status-metrics strong {
+  display: block;
+  color: var(--ink);
+  font-size: 20px;
+  line-height: 1.1;
 }
 
 .section {
@@ -412,8 +462,18 @@ th {
   font-weight: 800;
 }
 
+.btn.primary {
+  border-color: var(--accent-dark);
+  background: var(--accent-dark);
+  color: white;
+}
+
 .btn:hover {
   background: var(--accent-soft);
+}
+
+.btn.primary:hover {
+  background: var(--accent);
 }
 
 .footer {
@@ -431,6 +491,11 @@ th {
   .hero {
     grid-template-columns: 1fr;
     padding-top: 44px;
+  }
+
+  .status-band,
+  .status-metrics {
+    grid-template-columns: 1fr;
   }
 
   .grid.three,
