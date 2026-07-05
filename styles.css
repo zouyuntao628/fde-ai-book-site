@@ -295,15 +295,84 @@ h1 {
   gap: 16px;
 }
 
+.book-reading-path {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 18px;
+}
+
+.book-reading-path a {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  padding: 16px;
+  transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.book-reading-path a:hover {
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+  box-shadow: 0 12px 28px rgba(36, 45, 34, 0.08);
+}
+
+.book-reading-path span,
+.book-reading-path small {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.book-reading-path strong {
+  display: block;
+  margin: 4px 0;
+  color: var(--ink);
+  font-size: 20px;
+}
+
+.part-divider {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--line-strong);
+  padding: 24px 0 4px;
+}
+
+.part-divider span {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.part-divider h3 {
+  margin: 4px 0 8px;
+  font-size: 26px;
+}
+
+.part-divider p {
+  max-width: 780px;
+  margin: 0;
+  color: var(--muted);
+}
+
 .book-chapter {
+  position: relative;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--paper);
   padding: 20px;
 }
 
+.book-chapter-number {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  color: rgba(31, 111, 91, 0.15);
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1;
+}
+
 .book-chapter h3 {
-  margin: 8px 0 12px;
+  margin: 8px 42px 12px 0;
   font-size: 21px;
 }
 
@@ -453,6 +522,46 @@ h1 {
   padding-bottom: 24px;
   border-bottom: 1px solid var(--line);
   margin-bottom: 28px;
+}
+
+.book-chapter-progress {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.book-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.book-meta-grid div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcf9;
+  padding: 12px;
+}
+
+.book-meta-grid span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.book-meta-grid strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.45;
 }
 
 .chapter-kicker {
@@ -628,6 +737,7 @@ th {
   .grid.three,
   .grid.two,
   .toc-list,
+  .book-reading-path,
   .book-outline {
     grid-template-columns: 1fr;
   }
@@ -638,6 +748,10 @@ th {
 
   .sidebar {
     display: none;
+  }
+
+  .book-meta-grid {
+    grid-template-columns: 1fr;
   }
 
   .mobile-toc {

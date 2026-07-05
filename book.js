@@ -250,6 +250,10 @@ function renderSourceLinks(sources) {
   }).join("");
 }
 
+function sourceLabel(sources) {
+  return sources.map((number) => `原第 ${Number(number)} 章`).join("、");
+}
+
 function renderBookChapter() {
   const container = document.querySelector("[data-book-chapter]");
   if (!container) return;
@@ -264,9 +268,27 @@ function renderBookChapter() {
 
   container.innerHTML = `
     <header class="article-header">
-      <p class="chapter-kicker">${escapeHTML(chapter.part)}</p>
+      <div class="book-chapter-progress">
+        <span>第 ${Number(chapter.number)} / ${bookChapters.length} 章</span>
+        <span>${escapeHTML(chapter.part)}</span>
+      </div>
+      <p class="chapter-kicker">Book Edition</p>
       <h1>第 ${Number(chapter.number)} 章 ${escapeHTML(chapter.title)}</h1>
       <p class="subtitle">${escapeHTML(chapter.summary)}</p>
+      <div class="book-meta-grid">
+        <div>
+          <span>所属篇章</span>
+          <strong>${escapeHTML(chapter.part)}</strong>
+        </div>
+        <div>
+          <span>本章小节</span>
+          <strong>${chapter.sections.length} 节</strong>
+        </div>
+        <div>
+          <span>原稿来源</span>
+          <strong>${escapeHTML(sourceLabel(chapter.sources))}</strong>
+        </div>
+      </div>
     </header>
 
     <section>
