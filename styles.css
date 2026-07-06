@@ -619,6 +619,28 @@ h1 {
   color: var(--muted);
 }
 
+.section-detail {
+  margin-top: 14px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+.section-detail strong {
+  display: block;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.section-detail ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+.section-detail li {
+  color: #42483f;
+  margin: 7px 0;
+}
+
 .section-number {
   color: var(--accent);
   font-size: 13px;
